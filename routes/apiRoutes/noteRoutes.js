@@ -1,10 +1,15 @@
+// The express.Router() function is used to create a new router object. This function is used when you want to create a new router object in your program to handle requests.
 const router = require('express').Router();
+// getting deconstructed functions from notes.js file in lib folder to be able to use function in the file.
 const { filterByQuery, findById, createNewNote, validateNote } = require('../../lib/notes');
-const { v4: uuidv4 } = require('uuid'); // to create a uniq id needs to be install npm i uuid
+// to create a uniq id needs to be install npm i uuid
+const { v4: uuidv4 } = require('uuid');
+// to be able to work with our data base we need to require it
 const notesArray = require('../../data/db.json');
 
-
 // notes routes
+//! notice what the url provided without api, we already would have api/ in server call.
+// get item by query
 router.get('/notes', (req, res) => {
     let result = notesArray;
     if (req.query) {
@@ -14,6 +19,7 @@ router.get('/notes', (req, res) => {
     // res.json(notes)
 });
 
+// get item by id
 router.get('/notes/:id', (req, res) => {
     const result = findById(req.params.id, notesArray);
     // if (result) {
@@ -25,6 +31,7 @@ router.get('/notes/:id', (req, res) => {
     // could be shorthanded like:
     (result) ? res.json(result) : res.status(404).send('The note with the given ID was not found in the data base!');
 });
+
 // to create and add note to server and data base we use app.post
 router.post('/notes', (req, res) => {
     // req.body is where our incoming content will be
@@ -45,6 +52,7 @@ router.post('/notes', (req, res) => {
     (!validateNote(req.body)) ? res.status(400).send('The note is not properly formatted.') : res.json(createNewNote(req.body, notesArray));
 });
 
+// to delete a note we will use delete method of app/
 router.delete('/notes/:id', (req, res) => {
     // console.log(req.params.id);
     // Look up the note
@@ -65,4 +73,5 @@ router.delete('/notes/:id', (req, res) => {
     // res.send(note); // causing error in terminal. Can't set headers after they are sent to the client
 });
 
+// to export the routes
 module.exports = router;
