@@ -25,6 +25,7 @@ Project is created with:
 - JavaScript
 - Node.js
 - npm
+- Heroku
 
 ## Installation
 To open this project in vscode using git in Terminal/Git Bash:
