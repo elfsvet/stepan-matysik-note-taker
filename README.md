@@ -1,7 +1,7 @@
 # Stepan Matysik's Note Taker
 
-> Note taker project. A video with a team project description.
-> Live demo [_here_](https://youtu.be/A1Pvhj1zYf8). 
+> Note taker project. A working link with the note taker project.
+> Live demo [_here_](https://sm-note-taker.herokuapp.com/). 
 
 ## Table of contents
 * [General info](#general-info)
@@ -19,11 +19,9 @@
 
 
 ## General Info
-This project is a team profile generator. Uses back end to simplify the process of creation a website with valuable information.
+This project is a note taker. Uses back end to store variable notes and to do lists.
 ## Technologies
 Project is created with:
-- HTML
-- CSS
 - JavaScript
 - Node.js
 - npm
@@ -38,36 +36,33 @@ $ code .
 ```
 
 ## Instructions
-1. You would need to run commands in terminal at the directory of the project:
-```
-$npm install inquirer
-$npm install --save-dev jest
-```
-2. To run application:
-```
-$node index.js
-```
-3. Follow the questions and steps.
-4. Check the dist folder.
+1. Open the [link](https://sm-note-taker.herokuapp.com/) and click "Get Started".
+2. Type in Title and Text of the note.
+3. Click on save button if you want to store the note.
+4. If you change your mind and didn't store the note. But you want to start another note, click on + button. It will remove previous input.
+5. On the left, after you store at least a note, there will be notes.
+6. Click a note to see it text and title on the right.
+7. If you want to delete a note, simply click a bucket button next to the note.
+8. Keep using it 🤪
 
 ## Features
 - Inquirer package
 - Jest package
+- Express package
+- UUID package
 
 ## Screenshots
-![Example screenshot](./src/images/screen-shot.png)
-
-If you haven't checked the link to the video with the application process please [CLICK HERE ⬇️](https://youtu.be/A1Pvhj1zYf8)
-
+![Example screenshot](./assets/images/samp.png)
 
 ## Usage
-For creating a team and have easy access to the contact information.
+For creating and storing notes.
 ## Project Status
 Project is: _complete_
 
 ## Room for Improvement
 To do:
-- We can feature the team members by their ranks
+- We can add a button to delete all.
+- Add ability to edit existing notes.
 
 ## Acknowledgements
 - This project was inspired by UM Coding Boot Camp
